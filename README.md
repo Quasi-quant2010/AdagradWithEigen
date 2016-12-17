@@ -11,8 +11,10 @@
   - Very useful libraries handling various streams, string and FITS I/O for C users
   - version 1.4.2
   - http://www.ir.isas.jaxa.jp/~cyamauch/sli/index.ni.html
+
 # example data
 - https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary/australian_scale
+
 # Sample Command
 - make
 - ./main --train_file sample/train.txt \
@@ -27,5 +29,6 @@
 		 --mini_batch_size 5 \
 		 --out_path ./ \
 		 --out_fname L2		 
+
 # Sample Result
 - in sample folder, there is a Batch VS SGD LogLoss Plot.
