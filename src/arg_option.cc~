@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <getopt.h>
+
+#include "arg_option.h"
+
+static struct option options[] =
+  {
+    {"train", required_argument, NULL, 'a'},
+    {"test", required_argument, NULL, 'b'},
+    {"out", required_argument, NULL, 'c'},
+    {"lambda", required_argument, NULL, 'd'},
+    {"step_size", required_argument, NULL, 'e'},
+    {"epsilon", required_argument, NULL, 'f'},
+    {"clip_threshold", required_argument, NULL, 'g'},
+    {"clip_method", required_argument, NULL, 'h'},
+    {"max_iteration", required_argument, NULL, 'i'},
+    {"mini_batch", required_argument, NULL, 'j'},
+    {0, 0, 0, 0}
+  };
+
+
+void read_args(int argc, char **argv, command_args *option_args){
+
+  int dummy, index;
+  while( (dummy = getopt_long(argc, argv, "a:b:c:d:e:f:g:h:i:j", options, &index)) != -1 ){
+    switch(dummy){
+    case 'a':
+      option_args->train = optarg;
+      break;
+    case 'b':
+      option_args->test = optarg;
+      break;
+    case 'c':
+      option_args->out = optarg;
+      break;
+    case 'd':
+      option_args->lambda = atof(optarg);
+      break;
+    case 'e':
+      option_args->step_size = atof(optarg);
+      break;
+    case 'f':
+      option_args->epsilon = atof(optarg);
+      break;
+    case 'g':
+      option_args->clip_threshold = atof(optarg);
+      break;
+    case 'h':
+      option_args->clip_method = optarg;
+      break;
+    case 'i':
+      option_args->max_iteration = atoi(optarg);
+      break;
+    case 'j':
+      option_args->mini_batch = atoi(optarg);
+      break;
+    default:
+      printf("Error: An unkown option\n");
+      exit(1);
+    }
+  } 
+  
+}

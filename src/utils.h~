@@ -1,0 +1,12 @@
+#ifndef __UTILS__H__
+#define __UTILS__H__
+
+#include <Eigen/Dense>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+void read(string filepath, Eigen::MatrixXd &x, Eigen::VectorXd &l);
+
+#endif //__UTILS__H__
