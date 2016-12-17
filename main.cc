@@ -78,27 +78,4 @@ int main(int argc, char **argv)
 	      &X_train, &y_train,
 	      &w, w_level_ptr);
   fclose(output);
-
-
-  //vector<double> adgscores;
-  //adglr.predict(X_test, y_test, adgscores);
-  //cout<<"=== Adagrad ==="<<endl;
-  //cout <<"Accuracy:"<< adglr.Acc(adgscores, y_test) << endl;
-
-  /*
-  string fname = "adagrad_iters_";
-  fname += option_args->clip_method;
-  fname += ".txt";
-  ofstream adgiofs(fname);
-  for(int i=0; i < loss.size(); i++)
-    adgiofs << loss[i] << endl;
-
- 
-  fname = "adagrad_weight_";
-  fname += option_args->clip_method;
-  fname += ".txt";
-  ofstream adgwofs(fname);
-  for(int i = 0; i< adglr.w.rows();i++)
-    adgwofs << adglr.w(i) << endl;
-  */
 }
